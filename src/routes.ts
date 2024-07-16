@@ -4,11 +4,16 @@ import AuthUserCnotroller from './controllers/user/AuthUserController';
 import DetailUserController from './controllers/user/DetailUserController';
 
 import { isAuthenticated } from './middlewares/isAuthenticated';
+import CreateCategoryController from './controllers/category/CreateCategoryController';
 
 const router = Router();
 
+// ROTAS USER
 router.post('/users', CreateUserController.handle);
 router.post('/session', AuthUserCnotroller.handle);
 router.get('/me', isAuthenticated, DetailUserController.handle);
+
+// ROTAS CATEGORIAS
+router.post('/category', isAuthenticated, CreateCategoryController.handle);
 
 export { router };

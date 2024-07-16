@@ -2,13 +2,22 @@ import { Request, Response } from "express";
 import { CreateProductService } from "../../services/product/CreateProductService";
 
 class CreateProductController {
-    async handle(request: Request, response: Response) {
+    async handle(req: Request, res: Response) {
         const createProductService = new CreateProductService();
-        const { name, price, description, category_id } = request.body;
-        let banner = '';
+        const { name, price, description, category_id } = req.body;
 
-        const product = await createProductService.execute({ name, price, description, banner, category_id });
-        return response.json(product);
+        if (!req.file) {
+            throw new Error("File is required");
+        }
+        const { filename: banner } = req.file;
+        const product = await createProductService.execute({
+            name,
+            price,
+            description,
+            banner,
+            category_id
+        });
+        return res.json(product);
     }
 }
 

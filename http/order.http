@@ -7,3 +7,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVGFsbGVzI
     "name": "Mesa 1",
     "table": 1
 }
+
+
+### DELETE order
+DELETE http://localhost:3333/order?order_id=02cbbacc-dcc5-403b-8d4a-79f9f49db51b
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVGFsbGVzIiwiZW1haWwiOiJ0YWxsZXMxQGV4ZW1wbGUuY29tIiwiaWF0IjoxNzIxMDA5OTQ3LCJleHAiOjE3MjM2MDE5NDcsInN1YiI6IjRiOWI4MzFkLWQ1MTEtNGQwMC04NzFkLWRiMmU5ODA2MjJiNyJ9.Ht748kDfD0EdaxjFWIbIGsjVwxEXNc6iDtvBqpXuBAk
